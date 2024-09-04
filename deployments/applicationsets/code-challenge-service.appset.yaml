@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: code-challenge-service
+  namespace: argocd
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -22,7 +23,6 @@ spec:
         targetRevision: 1.0.0-68ca34a7a1b93612e8c8269cc67350aa8c150743
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: 'code-challenge-service-{{.environment}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
