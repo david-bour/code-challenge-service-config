@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: code-challenge-service
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+      - environment: dev
+      - environment: stage
+      - environment: prod
+  template:
+    metadata:
+      name: 'code-challenge-service-{{.environment}}'
+    spec:
+      project: default
+      source:
+        chart: code-challenge-service
+        repoURL: registry-1.docker.io/davidbour/code-challenge-service
+        targetRevision: 1.0.0-68ca34a7a1b93612e8c8269cc67350aa8c150743
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: 'code-challenge-service-{{.environment}}'
