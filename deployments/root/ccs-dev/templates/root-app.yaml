@@ -10,9 +10,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/david-bour/code-challenge-service-config/deployments/applicationsets
+    repoURL: https://github.com/david-bour/code-challenge-service-config
     targetRevision: HEAD  # For Helm, this refers to the chart version.
-    path: code-challenge-service-{{ .Values.environment }}  # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
+    path: deployments/applicationsets
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
