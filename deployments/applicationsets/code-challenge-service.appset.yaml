@@ -20,7 +20,7 @@ spec:
       source:
         chart: code-challenge-service
         repoURL: registry-1.docker.io/davidbour
-        targetRevision: 1.0.0-a002f646ced41201fb2f55f68d882e8282ac5078
+        targetRevision: 1.0.0-bde63c804141ceb321ff57312512962c644227a7
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: 'code-challenge-service-{{.environment}}'
