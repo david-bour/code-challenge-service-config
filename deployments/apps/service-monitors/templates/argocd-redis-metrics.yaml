@@ -9,4 +9,4 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argocd-redis
   endpoints:
-  - port: http-exporter-port
+  - port: http-metrics

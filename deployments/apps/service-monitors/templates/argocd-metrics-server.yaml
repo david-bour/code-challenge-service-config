@@ -9,4 +9,4 @@ spec:
     matchLabels:
       app.kubernetes.io/name: argocd-server-metrics
   endpoints:
-  - port: metrics
+  - port: http-metrics
