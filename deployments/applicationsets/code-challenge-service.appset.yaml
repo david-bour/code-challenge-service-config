@@ -10,8 +10,8 @@ spec:
   - list:
       elements:
       - environment: dev
-      - environment: stage
-      - environment: prod
+      # - environment: stage
+      # - environment: prod
   template:
     metadata:
       name: 'code-challenge-service-{{.environment}}'
