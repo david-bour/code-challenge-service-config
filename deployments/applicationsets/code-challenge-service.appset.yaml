@@ -18,13 +18,17 @@ spec:
     spec:
       project: default
       source:
-        chart: code-challenge-service
-        repoURL: registry-1.docker.io/davidbour
-        targetRevision: 1.0.0-bde63c804141ceb321ff57312512962c644227a7
-        helm:
-          valueFiles:
-            - values.yaml
-            - values.{{.environment}}.yaml
+        path: chart/code-challenge-service
+        repoURL: https://github.com/david-bour/code-challenge-service
+        targetRevision: main
+      # source:
+      #   chart: code-challenge-service
+      #   repoURL: registry-1.docker.io/davidbour
+      #   targetRevision: 1.0.0-bde63c804141ceb321ff57312512962c644227a7
+      #   helm:
+      #     valueFiles:
+      #       - values.yaml
+      #       - values.{{.environment}}.yaml
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: 'code-challenge-service-{{.environment}}'
